@@ -8,21 +8,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Weather Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeatherController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="So Hot" translatesAutoresizingMaskIntoConstraints="NO" id="eRf-qL-fEC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="So Hot" translatesAutoresizingMaskIntoConstraints="NO" id="eRf-qL-fEC" userLabel="BackgroundWallpaper">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tLa-83-r2q">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tLa-83-r2q" userLabel="TopView">
                                 <rect key="frame" x="20" y="52" width="335" height="48"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcU-rb-1bp">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcU-rb-1bp" userLabel="myLocation">
                                         <rect key="frame" x="0.0" y="1.3333333333333321" width="48" height="46.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="48" id="yxb-aJ-TBZ"/>
@@ -31,13 +31,16 @@
                                         <state key="normal" backgroundImage="location" catalog="system">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="geoLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DfZ-fh-thN"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter city" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="w9n-Qt-NW1">
                                         <rect key="frame" x="68" y="0.0" width="199" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgO-x7-fMz">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgO-x7-fMz" userLabel="Search Button">
                                         <rect key="frame" x="287" y="1.3333333333333321" width="48" height="45.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="48" id="2Yu-jL-BLx"/>
@@ -47,27 +50,30 @@
                                         <state key="normal" backgroundImage="magnifyingglass" catalog="system">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="seachButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DFF-Bk-w7P"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ala-E2-1cw">
-                                <rect key="frame" x="20" y="220" width="335" height="148.66666666666663"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ala-E2-1cw" userLabel="MiddleView">
+                                <rect key="frame" x="20" y="220" width="335" height="164.66666666666663"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.min.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="42u-5K-3gZ">
-                                        <rect key="frame" x="0.0" y="0.99999999999999645" width="48" height="46.333333333333329"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.min.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="42u-5K-3gZ" userLabel="weatherIndicator">
+                                        <rect key="frame" x="0.0" y="0.99999999999999645" width="64" height="62.333333333333329"/>
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="Aqq-vR-quF"/>
-                                            <constraint firstAttribute="width" constant="48" id="yZq-Gq-gZy"/>
+                                            <constraint firstAttribute="height" constant="64" id="Aqq-vR-quF"/>
+                                            <constraint firstAttribute="width" constant="64" id="yZq-Gq-gZy"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BREST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svN-H7-gpk">
-                                        <rect key="frame" x="0.0" y="48" width="101" height="40.666666666666657"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BREST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svN-H7-gpk" userLabel="CityName">
+                                        <rect key="frame" x="0.0" y="64" width="101" height="40.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 C °" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOJ-v8-Y1M">
-                                        <rect key="frame" x="0.0" y="88.666666666666686" width="135" height="60"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 C °" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOJ-v8-Y1M" userLabel="temperatureDegree">
+                                        <rect key="frame" x="0.0" y="104.66666666666669" width="135" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -92,6 +98,12 @@
                             <constraint firstItem="ala-E2-1cw" firstAttribute="top" secondItem="tLa-83-r2q" secondAttribute="bottom" constant="120" id="yKD-lf-v1L"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityName" destination="svN-H7-gpk" id="pqW-Rd-nnm"/>
+                        <outlet property="searchField" destination="w9n-Qt-NW1" id="27h-Rk-ZeH"/>
+                        <outlet property="temperatureDegree" destination="OOJ-v8-Y1M" id="rcQ-nv-h9S"/>
+                        <outlet property="weatherIndicator" destination="42u-5K-3gZ" id="ETT-Jb-4gJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
