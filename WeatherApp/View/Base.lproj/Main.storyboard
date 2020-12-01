@@ -80,6 +80,10 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jzt-gY-Pv2">
+                                <rect key="frame" x="20" y="630" width="335" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -88,8 +92,12 @@
                             <constraint firstItem="tLa-83-r2q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ea7-Ia-u92"/>
                             <constraint firstItem="eRf-qL-fEC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GrC-cL-hS5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ala-E2-1cw" secondAttribute="trailing" constant="20" id="Jzq-aq-phj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jzt-gY-Pv2" secondAttribute="trailing" constant="20" id="KfH-IX-tlo"/>
                             <constraint firstItem="tLa-83-r2q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="L3u-TO-RbF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jzt-gY-Pv2" secondAttribute="bottom" constant="20" id="O4k-H5-FN6"/>
+                            <constraint firstItem="Jzt-gY-Pv2" firstAttribute="height" secondItem="ala-E2-1cw" secondAttribute="height" multiplier="0.464329" id="QCD-A5-OdB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tLa-83-r2q" secondAttribute="trailing" constant="20" id="QZW-NI-l89"/>
+                            <constraint firstItem="Jzt-gY-Pv2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="U34-4x-2Od"/>
                             <constraint firstItem="eRf-qL-fEC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Y04-Ac-DZN"/>
                             <constraint firstAttribute="bottom" secondItem="eRf-qL-fEC" secondAttribute="bottom" id="bAJ-Id-7hG"/>
                             <constraint firstAttribute="trailing" secondItem="eRf-qL-fEC" secondAttribute="trailing" id="oiO-fE-kHf"/>
