@@ -59,7 +59,7 @@ struct WeatherManager {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             let temp = decodedData.main.temp
             let name = decodedData.name
-            
+            print("f")
             let weather = WeatherModel(cityName: name, temperature: temp)
             return weather
         } catch {
