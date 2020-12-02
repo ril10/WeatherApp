@@ -36,7 +36,11 @@ class WeatherController: UIViewController{
 extension WeatherController: WeatherManagerDelegate {
     
     func updateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
-        
+        DispatchQueue.main.async {
+            self.temperatureDegree.text = weather.temperatureString
+            self.weatherIndicator.image = UIImage(systemName: weather.conditionName)
+            self.cityName.text = weather.cityName
+        }
     }
     
 }
