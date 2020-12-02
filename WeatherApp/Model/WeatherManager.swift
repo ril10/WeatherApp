@@ -31,36 +31,30 @@ struct WeatherManager {
     
     
     func weatherData(urlString: String) {
-        //создаем переменную которая принмает ссылку и конвертирует ее в адресс
-        guard let url = URL(string: urlString) else {return}
-        //создается сессия
-        let session = URLSession.shared
-        //метод комплетишн хэндлер дата данные,респонсе статус запроса,и error
-        session.dataTask(with: url) { (data, response, error) in
-            guard let data = data else {return}
-          if let dataWeather = self.parseJSON(data) {
-            self.delegate?.updateWeather(self, weather: dataWeather)
+        if let url = URL(string: urlString) {
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { (data, response, error) in
+                if error != nil {
+                    print(error)
+                }
+                if let safeData = data {
+                    if let weather = self.parseJSON(safeData) {
+                        self.delegate?.updateWeather(self, weather: weather)
+                    }
+                }
             }
-            print(data)
-            do{
-                //получаем данные с помощью джсон сериализейшн
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                print(json)
-            } catch {
-                print(error)
-            }
-            
-        }.resume()
+            task.resume()
+        }
     }
     
     func parseJSON(_ weatherData: Data) -> WeatherModel?  {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+            let id = decodedData.weather[0].id
             let temp = decodedData.main.temp
             let name = decodedData.name
-            print("f")
-            let weather = WeatherModel(cityName: name, temperature: temp)
+            let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
             return weather
         } catch {
             print(error)
