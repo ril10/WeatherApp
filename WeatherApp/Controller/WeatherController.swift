@@ -39,7 +39,7 @@ extension WeatherController: WeatherManagerDelegate {
             self.temperatureDegree.text = weather.temperatureString
             self.weatherIndicator.image = UIImage(systemName: weather.conditionName)
             self.cityName.text = weather.cityName
-            self.weatherInformation.text = "At this moment \(weather.description). The wind speed is \(weather.windSpeed)m/s also it's feel's like \(weather.feelsLike)C°"
+            self.weatherInformation.text = "At this moment \(weather.description). The wind speed is \(weather.windSpeed)m/s also it's feel's like \(weather.feelsTemperature)C°"
         }
     }
     
