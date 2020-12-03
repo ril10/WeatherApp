@@ -39,7 +39,7 @@ extension WeatherController: WeatherManagerDelegate {
             self.temperatureDegree.text = weather.temperatureString
             self.weatherIndicator.image = UIImage(systemName: weather.conditionName)
             self.cityName.text = weather.cityName
-            self.weatherInformation.text = "At this moment is \(weather.description) and wind speed is\(weather.windSpeed) also it's feel's like \(weather.feelsLike)"
+            self.weatherInformation.text = "At this moment \(weather.description). The wind speed is \(weather.windSpeed)m/s also it's feel's like \(weather.feelsLike)C°"
         }
     }
     
@@ -83,10 +83,7 @@ extension WeatherController: CLLocationManagerDelegate {
         if let location = locations.last {
             let lat = location.coordinate.latitude
             let lon = location.coordinate.longitude
-            print(lat,lon)
             weatherManager.fetchWeather(latitude: lat, longtitude: lon)
-            print(weatherManager.fetchWeather(latitude: lat, longtitude: lon)
-)
         }
         locationManager.stopUpdatingLocation()
     }
