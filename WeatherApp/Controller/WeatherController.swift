@@ -10,8 +10,6 @@ import CoreLocation
 
 class WeatherController: UIViewController{
 
-    
-
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
 
@@ -83,7 +81,10 @@ extension WeatherController: CLLocationManagerDelegate {
         if let location = locations.last {
             let lat = location.coordinate.latitude
             let lon = location.coordinate.longitude
+            print(lat,lon)
             weatherManager.fetchWeather(latitude: lat, longtitude: lon)
+            print(weatherManager.fetchWeather(latitude: lat, longtitude: lon)
+)
         }
         locationManager.stopUpdatingLocation()
     }
