@@ -17,6 +17,7 @@ class WeatherController: UIViewController{
     @IBOutlet weak var weatherIndicator: UIImageView!
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var temperatureDegree: UILabel!
+    @IBOutlet weak var weatherInformation: UILabel!
     
     
     override func viewDidLoad() {
@@ -38,6 +39,7 @@ extension WeatherController: WeatherManagerDelegate {
             self.temperatureDegree.text = weather.temperatureString
             self.weatherIndicator.image = UIImage(systemName: weather.conditionName)
             self.cityName.text = weather.cityName
+            self.weatherInformation.text = "At this moment is \(weather.description) and wind speed is\(weather.windSpeed) also it's feel's like \(weather.feelsLike)"
         }
     }
     

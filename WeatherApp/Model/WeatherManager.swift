@@ -18,14 +18,13 @@ struct WeatherManager {
     var delegate: WeatherManagerDelegate?
     
     let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?appid=1f54f0d45461d225b61efc1ac022c081&units=metric"
-    //Формируем ссылку с городом и апи запросом и в конце передаем его на функцию ветер дата с конечной ссылкой для запроса
+    
     func fetchWeather(cityName: String) {
         let urlString = "\(weatherUrl)&q=\(cityName)"
         weatherData(urlString: urlString)
     }
     func fetchWeather(latitude: CLLocationDegrees, longtitude: CLLocationDegrees) {
         let urlString = "\(weatherUrl)&lat=\(latitude)&lon=\(longtitude)"
-        print(urlString)
         weatherData(urlString: urlString)
     }
     
@@ -56,8 +55,12 @@ struct WeatherManager {
             let id = decodedData.weather[0].id
             let temp = decodedData.main.temp
             let name = decodedData.name
+            let country = decodedData.sys.country
+            let description = decodedData.weather[0].description
+            let windSpeed = decodedData.wind.speed
+            let feelsLike = decodedData.main.feels_like
             
-            let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
+            let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp, country: country, description: description, windSpeed: windSpeed, feelsLike: feelsLike)
             
             return weather
         } catch {

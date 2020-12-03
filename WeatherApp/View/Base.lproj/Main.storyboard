@@ -85,6 +85,15 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jU-iK-2Tr">
                                         <rect key="frame" x="0.0" y="323.66666666666674" width="240" height="370.33333333333326"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="5" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1Q-U5-xN4">
+                                                <rect key="frame" x="8" y="14" width="257" height="137"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -109,11 +118,12 @@
                         <outlet property="searchField" destination="w9n-Qt-NW1" id="27h-Rk-ZeH"/>
                         <outlet property="temperatureDegree" destination="OOJ-v8-Y1M" id="rcQ-nv-h9S"/>
                         <outlet property="weatherIndicator" destination="42u-5K-3gZ" id="ETT-Jb-4gJ"/>
+                        <outlet property="weatherInformation" destination="s1Q-U5-xN4" id="tu4-Fp-Zvk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120.28985507246378" y="102.45535714285714"/>
+            <point key="canvasLocation" x="119.2" y="101.97044334975369"/>
         </scene>
     </scenes>
     <resources>
