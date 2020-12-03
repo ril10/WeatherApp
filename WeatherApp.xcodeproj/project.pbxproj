@@ -16,7 +16,6 @@
 		105A2CAE256C12FE00F62E0D /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A2CAD256C12FE00F62E0D /* WeatherManager.swift */; };
 		105A2CB2256EBCE800F62E0D /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A2CB1256EBCE800F62E0D /* WeatherModel.swift */; };
 		105A2CB5256EBDAB00F62E0D /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A2CB4256EBDAB00F62E0D /* WeatherData.swift */; };
-		105A2CCA257915A300F62E0D /* WeatherApp.app in Resources */ = {isa = PBXBuildFile; fileRef = 105A2C8F2567F33D00F62E0D /* WeatherApp.app */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,7 +159,6 @@
 			files = (
 				105A2C9F2567F34100F62E0D /* LaunchScreen.storyboard in Resources */,
 				105A2C9C2567F34100F62E0D /* Assets.xcassets in Resources */,
-				105A2CCA257915A300F62E0D /* WeatherApp.app in Resources */,
 				105A2C9A2567F33E00F62E0D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
